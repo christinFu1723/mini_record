@@ -1,0 +1,15 @@
+<view class="container">
+  <view style="width: 100%;height:100px;z-index:1000;position: fixed;bottom:0px;left:0px;display: flex;">
+    <view bindtap="record" style="width: 100px;height:100px;background-color:pink;">开始录制</view>
+    <view bindtap="stopRecord" style="width: 100px;height:100px;background-color:yellow;">停止录制</view>
+    <view catchtouchstart="streamRecord" catchtouchend="endStreamRecord" style="width: 100px;height:100px;background-color:green;">同声传译插件</view>
+
+    <view bindtap="snapShot" style="width: 100px;height:100px;background-color:red;">截图</view>
+  </view>
+  <camera device-position="front" flash="off" binderror="error" frame-size="medium" style="width: 100vw; height:100vh;z-index:10" >
+
+  <view>语音识别内容：{{currentText}}</view>
+  </camera>
+
+    <canvas id="myCanvas" canvas-id="myCanvas" style="border:1px solid black;width: 100vw; height:100vh;"></canvas>
+</view>
